@@ -1,0 +1,15 @@
+{
+  "node_id": "3bada960",
+  "node_type": "task",
+  "node_index": 1,
+  "label": "Task-1",
+  "title": "Write article: P0 Double-Path Bug Fix ships",
+  "description": "The critical double-path prefix bug that broke all CLI operations on real repositories has been fixed. Source material: roles/Issues-FS__Dev__Role__Dev/docs/debrief__2026-02-10__double-path-bug-fix.md. Story angles: (1) The bug was invisible to tests but broke all real-world usage - a cautionary tale about round-trip test masking. (2) Collaborative fix: human identified root cause, Dev agent applied fix systematically to all 14 methods. (3) CLI now works on real repos: issues-fs list shows all issues for the first time. (4) Follow-up Obj_Id validation bug discovered during verification. Target: publications/articles/",
+  "status": "backlog",
+  "created_at": 1770691517414,
+  "updated_at": 1770691517414,
+  "created_by": "4f0b9788",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
