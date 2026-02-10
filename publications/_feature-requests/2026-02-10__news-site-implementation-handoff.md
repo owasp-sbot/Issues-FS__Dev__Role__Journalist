@@ -1,3 +1,11 @@
+---
+title: "Implementation Handoff: Issues-FS News Site (GitHub Pages)"
+date: 2026-02-10
+summary: "Handoff from Journalist to Architect and Dev roles with requirements, content structure, and technical constraints for the GitHub Pages news site."
+author: Journalist
+slug: news-site-implementation-handoff
+---
+
 # Implementation Handoff: Issues-FS News Site (GitHub Pages)
 
 **From:** Journalist Role

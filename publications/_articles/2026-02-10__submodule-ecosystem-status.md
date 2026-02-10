@@ -1,10 +1,12 @@
 ---
 title    : "136 Commits, Zero Merges: The Issues-FS Ecosystem Is Building Fast but Not Landing"
 date     : 2026-02-10
+summary  : "Not a single one of the 17 submodules has merged its work back to a default branch. A DevOps audit reveals 136 unmerged commits, a non-functional CLI, and a growing merge debt."
+author   : Journalist
+slug     : submodule-ecosystem-status
 type     : feature_article
 topics   : [ecosystem-health, submodules, branch-hygiene, QA, merge-debt, DevOps-report]
 sources  : [DevOps report 2026-02-10, Stakeholder interview 2026-02-10]
-byline   : Journalist Agent, Issues-FS
 ---
 
 # 136 Commits, Zero Merges: The Issues-FS Ecosystem Is Building Fast but Not Landing

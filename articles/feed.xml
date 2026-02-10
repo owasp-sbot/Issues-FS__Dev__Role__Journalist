@@ -1,0 +1,23 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Issues-FS News - Articles</title>
+    <description>Feature articles and analysis from the Issues-FS ecosystem</description>
+    <link>{{ site.url }}/articles/</link>
+    <atom:link href="{{ site.url }}/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    {% assign sorted = site.articles | sort: "date" | reverse %}
+    {% for doc in sorted limit:20 %}
+    <item>
+      <title>{{ doc.title | xml_escape }}</title>
+      <description>{{ doc.summary | xml_escape }}</description>
+      <pubDate>{{ doc.date | date_to_rfc822 }}</pubDate>
+      <link>{{ doc.url | absolute_url }}</link>
+      <guid isPermaLink="true">{{ doc.url | absolute_url }}</guid>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>

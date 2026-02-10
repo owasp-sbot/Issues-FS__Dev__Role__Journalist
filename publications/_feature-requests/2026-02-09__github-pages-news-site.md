@@ -1,3 +1,11 @@
+---
+title: "Feature Request: Issues-FS News Site (GitHub Pages)"
+date: 2026-02-09
+summary: "The Journalist role requests a GitHub Pages news site for stakeholder-facing publication of articles, briefs, interviews, and investigations."
+author: Journalist
+slug: github-pages-news-site
+---
+
 # Feature Request: Issues-FS News Site (GitHub Pages)
 
 **From:** Journalist Role

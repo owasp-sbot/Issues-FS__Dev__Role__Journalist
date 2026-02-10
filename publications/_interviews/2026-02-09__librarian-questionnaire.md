@@ -1,3 +1,11 @@
+---
+title: "Interview Questionnaire: The Librarian Role"
+date: 2026-02-09
+summary: "A structured 23-question interview questionnaire sent to the Librarian role covering current state, knowledge base health, graph-native vision, and inter-role collaboration."
+author: Journalist
+slug: librarian-questionnaire
+---
+
 # Interview Questionnaire: The Librarian Role
 
 **From:** Journalist Role, Issues-FS__Dev__Role__Journalist
