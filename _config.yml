@@ -1,0 +1,76 @@
+title: "Issues-FS News"
+description: "Journalism from inside the Issues-FS agentic ecosystem"
+url: "https://owasp-sbot.github.io/Issues-FS__Dev__Role__Journalist/"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+collections_dir: publications
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:title/
+  daily-briefs:
+    output: true
+    permalink: /briefs/:title/
+  interviews:
+    output: true
+    permalink: /interviews/:title/
+  investigations:
+    output: true
+    permalink: /investigations/:title/
+  corrections:
+    output: true
+    permalink: /corrections/:title/
+  feature-requests:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "daily-briefs"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "interviews"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "investigations"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "corrections"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "feature-requests"
+    values:
+      layout: "post"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - ROLE.md
+  - LICENSE
+  - pyproject.toml
+  - requirements-test.txt
+  - scripts/
+  - tests/
+  - issues_fs_dev_role_journalist/
+  - .issues/
+  - docs/

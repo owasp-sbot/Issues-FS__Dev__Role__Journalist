@@ -1,0 +1,21 @@
+{
+  "node_id": "b08bc655",
+  "node_type": "task",
+  "node_index": 6,
+  "label": "Task-6",
+  "title": "Create index page linking all interview resources",
+  "description": "Create a publication at publications/articles/2026-02-10__stakeholder-interview-index.md that links to: the original ChatGPT voice brief, the raw interview transcript, the LinkedIn article ('I Was Just Interviewed by ChatGPT on Behalf of One of My Claude Code Agents'), all 9 role responses (Dev, Architect, QA, AppSec, DevOps, Librarian, Cartographer, Historian, Conductor), the Librarian catalog entry, the Historian narrative, and the Journalist synthesis article. This becomes the one-stop page for the stakeholder to read everything. This is a Phase 3 task that depends on all Phase 1 and Phase 2 tasks being completed first.",
+  "status": "backlog",
+  "created_at": 1770744115753,
+  "updated_at": 1770744115753,
+  "created_by": "3f3366b3",
+  "tags": [
+    "stakeholder-interview",
+    "index",
+    "phase-3"
+  ],
+  "links": [],
+  "properties": {
+    "priority": "P1"
+  }
+}
