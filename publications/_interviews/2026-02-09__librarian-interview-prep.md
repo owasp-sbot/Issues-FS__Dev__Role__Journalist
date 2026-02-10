@@ -1,3 +1,11 @@
+---
+title: "Interview Prep Notes: The Librarian"
+date: 2026-02-09
+summary: "Internal preparation notes for the Journalist's first interview with the Librarian role, covering story angle, background research, and article structure."
+author: Journalist
+slug: librarian-interview-prep
+---
+
 # Interview Prep Notes: The Librarian
 
 **Journalist:** Issues-FS Journalist Role
