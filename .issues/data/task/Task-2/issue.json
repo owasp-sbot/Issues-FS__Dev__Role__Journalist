@@ -1,0 +1,15 @@
+{
+  "node_id": "2e217171",
+  "node_type": "task",
+  "node_index": 2,
+  "label": "Task-2",
+  "title": "Create daily news bulletin for 2026-02-10",
+  "description": "Compile and publish a daily news bulletin covering recent activity across the Issues-FS ecosystem. Key items to cover: (1) P0 Double-Path Bug Fix shipped - all 14 path methods fixed, 74+ issues now visible across 4 repos, (2) Invalid Obj_Id data fixed in CLI and Service UI repos, (3) New feature request: issues-fs validate command (Feature-1 in CLI repo), (4) Librarian and Dev role docs updated with debrief and assessment. Check all role repos and module repos for recent commits and issues for additional coverage.",
+  "status": "backlog",
+  "created_at": 1770728071472,
+  "updated_at": 1770728071472,
+  "created_by": "589534fb",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
