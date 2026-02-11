@@ -1,0 +1,15 @@
+{
+  "node_id": "095140b2",
+  "node_type": "task",
+  "node_index": 7,
+  "label": "Task-7",
+  "title": "Write article: The Great Merge milestone",
+  "description": "Write feature article covering the historic merge of all 136+ unmerged commits across all 17 submodules. Cover: P0 bug fix, CLI working, Obj_Id data fixed, QA infra provisioned, Human repo CI, news site deployed, ADRs produced, stakeholder interview process innovation, and the transition from building to operating. Sources: DevOps report 2026-02-10, stakeholder interview, ADR-001.",
+  "status": "done",
+  "created_at": 1770769242816,
+  "updated_at": 1770769253151,
+  "created_by": "5681d734",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
