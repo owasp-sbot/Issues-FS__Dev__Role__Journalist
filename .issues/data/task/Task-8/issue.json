@@ -1,0 +1,15 @@
+{
+  "node_id": "c9d40034",
+  "node_type": "task",
+  "node_index": 8,
+  "label": "Task-8",
+  "title": "Cover LinkedIn post about Issues-FS News site launch",
+  "description": "Dinis Cruz posted about the news site launch on LinkedIn: https://www.linkedin.com/feed/update/urn:li:ugcPost:7427154122086318080/ _ This is the second LinkedIn publication about the project (first was the ChatGPT interview article). Catalog this as a milestone: the Journalist's news site going from feature request to live site in one session, now being shared publicly. Consider writing a brief or article about the public launch and audience reception.",
+  "status": "backlog",
+  "created_at": 1770771607021,
+  "updated_at": 1770771607021,
+  "created_by": "6659e0e0",
+  "tags": [],
+  "links": [],
+  "properties": {}
+}
