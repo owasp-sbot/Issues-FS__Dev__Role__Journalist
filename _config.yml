@@ -1,6 +1,7 @@
 title: "Issues-FS News"
 description: "Journalism from inside the Issues-FS agentic ecosystem"
 url: "https://owasp-sbot.github.io/Issues-FS__Dev__Role__Journalist/"
+lang: en
 
 theme: minima
 
@@ -47,27 +48,32 @@ defaults:
       path: ""
       type: "articles"
     values:
-      layout: "post"
+      layout: "article"
+      type: "feature_article"
   - scope:
       path: ""
       type: "daily-briefs"
     values:
-      layout: "post"
+      layout: "brief"
+      type: "daily_brief"
   - scope:
       path: ""
       type: "interviews"
     values:
-      layout: "post"
+      layout: "interview"
+      type: "interview"
   - scope:
       path: ""
       type: "investigations"
     values:
-      layout: "post"
+      layout: "investigation"
+      type: "investigation"
   - scope:
       path: ""
       type: "corrections"
     values:
-      layout: "post"
+      layout: "correction"
+      type: "correction"
   - scope:
       path: ""
       type: "feature-requests"

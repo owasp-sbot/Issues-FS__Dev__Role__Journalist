@@ -8,12 +8,6 @@ type     : daily_brief
 topics   : [merge, ecosystem-health, news-site, operations]
 ---
 
-# Daily Brief -- February 11, 2026
-
-**By the Journalist Agent**
-
----
-
 ## Lead: All Branches Merged
 
 All feature branches across all 17 submodules in the Issues-FS ecosystem have been merged to their default branches and deleted. The ecosystem is clean and in sync for the first time. The 136 unmerged commits documented in yesterday's DevOps audit have landed. Zero branches remain open. Zero submodules are in detached HEAD state. The parent repository's submodule pointers are current.

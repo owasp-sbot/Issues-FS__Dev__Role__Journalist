@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{% comment %}
+  Home layout — hero (most recent item) + two-column grid + category grid.
+  Merges all five collections, picks the most recent for the hero.
+{% endcomment %}
+
+{%- assign all_docs = site.articles | concat: site.daily-briefs | concat: site.interviews | concat: site.investigations | concat: site.corrections -%}
+{%- assign sorted_docs = all_docs | sort: "date" | reverse -%}
+{%- assign hero_doc = sorted_docs | first -%}
+
+<div class="post-base">
+  {%- include hero.html doc=hero_doc -%}
+
+  <div class="home-grid">
+    <div class="home-grid__section">
+      <h2 class="section-heading">Latest Articles</h2>
+      {%- assign recent_articles = site.articles | sort: "date" | reverse -%}
+      {%- assign article_count = 0 -%}
+      {%- for doc in recent_articles -%}
+        {%- if doc.url != hero_doc.url -%}
+          {%- if article_count < 3 -%}
+            {%- include card.html doc=doc -%}
+            {%- assign article_count = article_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if recent_articles.size > 0 -%}
+        <p><a href="{{ "/articles/" | relative_url }}">View all articles &rarr;</a></p>
+      {%- endif -%}
+    </div>
+
+    <div class="home-grid__section">
+      <h2 class="section-heading">Daily Briefs</h2>
+      {%- assign recent_briefs = site.daily-briefs | sort: "date" | reverse -%}
+      {%- assign brief_count = 0 -%}
+      {%- for doc in recent_briefs -%}
+        {%- if doc.url != hero_doc.url -%}
+          {%- if brief_count < 3 -%}
+            {%- include card.html doc=doc compact=true -%}
+            {%- assign brief_count = brief_count | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if recent_briefs.size > 0 -%}
+        <p><a href="{{ "/briefs/" | relative_url }}">View all briefs &rarr;</a></p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <h2 class="section-heading">Categories</h2>
+
+  <div class="category-grid">
+    <a class="category-card category-card--article" href="{{ "/articles/" | relative_url }}">
+      <div class="category-card__title">Articles</div>
+      <div class="category-card__count">{{ site.articles.size }} {% if site.articles.size == 1 %}piece{% else %}pieces{% endif %}</div>
+    </a>
+
+    <a class="category-card category-card--brief" href="{{ "/briefs/" | relative_url }}">
+      <div class="category-card__title">Daily Briefs</div>
+      <div class="category-card__count">{{ site.daily-briefs.size }} {% if site.daily-briefs.size == 1 %}piece{% else %}pieces{% endif %}</div>
+    </a>
+
+    <a class="category-card category-card--interview" href="{{ "/interviews/" | relative_url }}">
+      <div class="category-card__title">Interviews</div>
+      <div class="category-card__count">{{ site.interviews.size }} {% if site.interviews.size == 1 %}piece{% else %}pieces{% endif %}</div>
+    </a>
+
+    <a class="category-card category-card--investigation" href="{{ "/investigations/" | relative_url }}">
+      <div class="category-card__title">Investigations</div>
+      <div class="category-card__count">{{ site.investigations.size }} {% if site.investigations.size == 1 %}piece{% else %}pieces{% endif %}</div>
+    </a>
+
+    <a class="category-card category-card--correction" href="{{ "/corrections/" | relative_url }}">
+      <div class="category-card__title">Corrections</div>
+      <div class="category-card__count">{{ site.corrections.size }} {% if site.corrections.size == 1 %}piece{% else %}pieces{% endif %}</div>
+    </a>
+  </div>
+</div>

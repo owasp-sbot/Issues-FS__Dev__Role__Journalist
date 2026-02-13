@@ -1,0 +1,20 @@
+{% comment %}
+  Breadcrumbs component — Home > Collection > Title.
+  Current page is not linked. Title truncated at 60 chars on mobile.
+
+  Usage:
+    {% include breadcrumbs.html collection_name="Articles" collection_url="/articles/" %}
+{% endcomment %}
+
+{%- assign bc_collection = include.collection_name -%}
+{%- assign bc_url = include.collection_url -%}
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a class="breadcrumbs__link" href="{{ "/" | relative_url }}">Home</a>
+  <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+  {%- if bc_collection -%}
+    <a class="breadcrumbs__link" href="{{ bc_url | relative_url }}">{{ bc_collection }}</a>
+    <span class="breadcrumbs__separator" aria-hidden="true">/</span>
+  {%- endif -%}
+  <span class="breadcrumbs__current" title="{{ page.title }}">{{ page.title | truncate: 60 }}</span>
+</nav>

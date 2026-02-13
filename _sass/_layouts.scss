@@ -1,0 +1,229 @@
+// =============================================================================
+// Per-Type Layout Styles — Issues-FS News
+// =============================================================================
+// Styles for content-type-specific layouts: article, brief, interview,
+// investigation, correction. Each uses a left accent border and
+// type-specific styling.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Shared post-base styles
+// ---------------------------------------------------------------------------
+
+.post-base {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: $space-xl $space-md;
+}
+
+.post-base__header {
+  margin-bottom: $space-xl;
+}
+
+.post-base__title {
+  font-family: $font-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $color-ink;
+  margin: $space-sm 0 $space-md;
+}
+
+.post-base__summary {
+  font-family: $font-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $color-slate;
+  margin-bottom: $space-lg;
+  font-style: italic;
+}
+
+.post-base__body {
+  font-family: $font-serif;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $color-ink;
+}
+
+// ---------------------------------------------------------------------------
+// Type accent borders
+// ---------------------------------------------------------------------------
+
+.post-base--article .post-base__header {
+  border-left: 4px solid $color-article-accent;
+  padding-left: $space-lg;
+}
+
+.post-base--brief .post-base__header {
+  border-left: 4px solid $color-brief-accent;
+  padding-left: $space-lg;
+}
+
+.post-base--interview .post-base__header {
+  border-left: 4px solid $color-interview-accent;
+  padding-left: $space-lg;
+}
+
+.post-base--investigation .post-base__header {
+  border-left: 4px solid $color-investigation-accent;
+  padding-left: $space-lg;
+}
+
+.post-base--correction .post-base__header {
+  border-left: 4px solid $color-correction-accent;
+  padding-left: $space-lg;
+}
+
+// ---------------------------------------------------------------------------
+// Brief — compact, date-prominent
+// ---------------------------------------------------------------------------
+
+.post-base--brief {
+  .post-base__title {
+    font-size: 28px;
+  }
+
+  .post-base__body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Interview — Q&A formatting
+// ---------------------------------------------------------------------------
+
+.interview-qa {
+  margin-top: $space-xl;
+}
+
+.interview-qa .question {
+  background: $color-warm-grey;
+  padding: $space-md $space-lg;
+  margin: $space-lg 0 0;
+  border-left: 3px solid $color-interview-accent;
+  font-weight: 600;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.interview-qa .answer {
+  padding: $space-md $space-lg;
+  border-left: 3px solid $color-ash;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Investigation — key findings callout
+// ---------------------------------------------------------------------------
+
+.callout {
+  background: #FEF2F2;
+  border: 1px solid rgba($color-alert-red, 0.2);
+  border-left: 4px solid $color-alert-red;
+  border-radius: 4px;
+  padding: $space-lg;
+  margin: $space-xl 0;
+}
+
+.callout__heading {
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-alert-red;
+  margin-bottom: $space-md;
+}
+
+.callout__list {
+  list-style: disc;
+  padding-left: $space-lg;
+  margin: 0;
+
+  li {
+    font-family: $font-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-ink;
+    margin-bottom: $space-sm;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Correction — minimal, links to corrected article
+// ---------------------------------------------------------------------------
+
+.correction-notice {
+  background: $color-warm-grey;
+  border: 1px solid $color-ash;
+  border-radius: 4px;
+  padding: $space-lg;
+  margin-bottom: $space-xl;
+  font-family: $font-sans;
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-slate;
+
+  a {
+    color: $color-signal-blue;
+    font-weight: 500;
+  }
+}
+
+.correction-dates {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+  margin-bottom: $space-lg;
+
+  time {
+    font-weight: 500;
+    color: $color-slate;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Responsive adjustments for layouts
+// ---------------------------------------------------------------------------
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  .post-base {
+    padding: $space-lg $space-md;
+  }
+
+  .post-base__title {
+    font-size: 28px;
+  }
+
+  .post-base__summary {
+    font-size: 17px;
+  }
+
+  .post-base--article .post-base__header,
+  .post-base--brief .post-base__header,
+  .post-base--interview .post-base__header,
+  .post-base--investigation .post-base__header,
+  .post-base--correction .post-base__header {
+    padding-left: $space-md;
+  }
+
+  .callout {
+    padding: $space-md;
+  }
+
+  .interview-qa .question,
+  .interview-qa .answer {
+    padding: $space-sm $space-md;
+  }
+}

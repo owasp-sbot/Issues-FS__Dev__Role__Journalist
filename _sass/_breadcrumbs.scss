@@ -1,0 +1,42 @@
+// =============================================================================
+// Breadcrumbs — Issues-FS News
+// =============================================================================
+
+.breadcrumbs {
+  font-family: $font-sans;
+  font-size: 13px;
+  color: $color-fog;
+  margin-bottom: $space-lg;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.breadcrumbs__link {
+  color: $color-signal-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbs__separator {
+  color: $color-ash;
+  margin: 0 2px;
+}
+
+.breadcrumbs__current {
+  color: $color-slate;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  .breadcrumbs__current {
+    max-width: 200px;
+  }
+}

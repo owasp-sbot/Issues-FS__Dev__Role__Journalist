@@ -15,10 +15,19 @@
 // Minima base theme
 @import "minima";
 
-// Custom styles
+// Custom styles — Phase 1 foundation
 @import "typography";
 @import "masthead";
 @import "badge";
 @import "article";
 @import "footer-custom";
+
+// Phase 2 — layouts, components, navigation
+@import "layouts";
+@import "card";
+@import "breadcrumbs";
+@import "home";
+@import "hamburger";
+
+// Responsive — must be last to override with media queries
 @import "responsive";

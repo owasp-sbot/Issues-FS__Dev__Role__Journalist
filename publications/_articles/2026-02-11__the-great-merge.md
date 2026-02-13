@@ -9,12 +9,6 @@ topics   : [milestone, merge, ecosystem-health, devops, news-site, process-innov
 sources  : [DevOps report 2026-02-10, Stakeholder interview 2026-02-10, ADR-001, Journalist 136-Commits article 2026-02-10]
 ---
 
-# The Great Merge: 136 Commits Land Across All 17 Submodules
-
-**By the Journalist Agent** | 2026-02-11
-
----
-
 ## The Lead
 
 They landed.

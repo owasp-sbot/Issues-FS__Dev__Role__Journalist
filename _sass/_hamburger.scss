@@ -1,0 +1,96 @@
+// =============================================================================
+// Hamburger Menu — CSS-only via <details>/<summary>
+// =============================================================================
+// Progressive enhancement: works without JS. Used below $breakpoint-mobile.
+// =============================================================================
+
+// On desktop, the details/summary menu is hidden; regular nav is shown
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  // Hide desktop nav, show mobile menu
+  .masthead__nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    margin-top: $space-sm;
+  }
+
+  .mobile-menu__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    font-family: $font-sans;
+    font-size: 24px;
+    font-weight: 400;
+    color: $color-paper;
+    background: none;
+    border: 1px solid rgba($color-paper, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    list-style: none;
+    padding: 0;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::marker {
+      display: none;
+      content: "";
+    }
+
+    &:hover {
+      border-color: $color-paper;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-signal-blue;
+      outline-offset: 2px;
+    }
+  }
+
+  .mobile-menu__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: $space-md 0;
+    margin-top: $space-sm;
+    border-top: 1px solid rgba($color-paper, 0.15);
+  }
+
+  .mobile-menu__link {
+    display: block;
+    padding: $space-sm 0;
+    font-family: $font-sans;
+    font-size: 16px;
+    font-weight: 500;
+    color: $color-ash;
+    text-decoration: none;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      color: $color-paper;
+    }
+
+    &.active {
+      color: $color-paper;
+      border-left: 3px solid $color-signal-blue;
+      padding-left: $space-md;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-signal-blue;
+      outline-offset: 2px;
+    }
+  }
+}

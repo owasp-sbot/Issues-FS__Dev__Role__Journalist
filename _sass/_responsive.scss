@@ -162,16 +162,22 @@ textarea:focus-visible {
 }
 
 // ---------------------------------------------------------------------------
-// Safe-area padding for notched devices
+// Safe-area padding for notched devices (mobile only)
 // ---------------------------------------------------------------------------
 
-@supports (padding: max(0px)) {
-  .site-header,
-  .site-footer,
-  .post-content,
-  .page-content .wrapper {
-    padding-left: max(var(--space-md), env(safe-area-inset-left));
-    padding-right: max(var(--space-md), env(safe-area-inset-right));
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  @supports (padding: max(0px)) {
+    .site-header,
+    .site-footer {
+      padding-left: max(var(--space-md), env(safe-area-inset-left));
+      padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
+
+    .post-content,
+    .page-content .wrapper {
+      padding-left: max(var(--space-md), env(safe-area-inset-left));
+      padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
   }
 }
 

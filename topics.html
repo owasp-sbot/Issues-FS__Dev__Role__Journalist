@@ -1,0 +1,48 @@
+---
+layout: default
+title: "Topics"
+permalink: /topics/
+---
+
+<div class="post-base">
+  <h1 class="post-base__title">Topics</h1>
+  <p class="post-base__summary">All topics covered across the Issues-FS News publication.</p>
+
+  {% comment %}
+    Collect all topics from all collections into a single sorted list.
+    Each topic gets an anchor section listing all content tagged with it.
+  {% endcomment %}
+
+  {% assign all_docs = site.articles | concat: site.daily-briefs | concat: site.interviews | concat: site.investigations | concat: site.corrections %}
+  {% assign all_topics = "" | split: "" %}
+
+  {% for doc in all_docs %}
+    {% if doc.topics %}
+      {% for topic in doc.topics %}
+        {% unless all_topics contains topic %}
+          {% assign all_topics = all_topics | push: topic %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% assign sorted_topics = all_topics | sort %}
+
+  <nav class="topic-index" aria-label="Topic index">
+    <div class="metadata__topics" style="margin-bottom: 32px;">
+      {% for topic in sorted_topics %}
+        <a class="topic-pill" href="#{{ topic | slugify }}">{{ topic }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+
+  {% for topic in sorted_topics %}
+    <section id="{{ topic | slugify }}" style="margin-bottom: 48px;">
+      <h2 class="section-heading">{{ topic }}</h2>
+      {% assign topic_docs = all_docs | where_exp: "doc", "doc.topics contains topic" | sort: "date" | reverse %}
+      {% for doc in topic_docs %}
+        {% include card.html doc=doc %}
+      {% endfor %}
+    </section>
+  {% endfor %}
+</div>

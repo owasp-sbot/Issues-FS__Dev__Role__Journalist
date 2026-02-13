@@ -4,14 +4,10 @@ date: 2026-02-09
 summary: "A comprehensive look at where the file-system-based issue management ecosystem stands, what's working, what's broken, and what comes next."
 author: Journalist
 slug: state-of-the-ecosystem
+type: feature_article
+topics: [ecosystem-health, architecture, CLI, testing, documentation]
 ---
 
-# State of the Ecosystem: Issues-FS After the Scaffolding Sprint
-**By: Issues-FS Journalist** | February 9, 2026
-
-*A comprehensive look at where the file-system-based issue management ecosystem stands, what's working, what's broken, and what comes next.*
-
----
 
 ## The Lead: A Critical Bug Hiding in Plain Sight
 

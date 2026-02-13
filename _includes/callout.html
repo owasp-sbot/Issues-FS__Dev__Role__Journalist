@@ -1,0 +1,21 @@
+{% comment %}
+  Callout component — renders a list of items in a highlighted callout box.
+  Used by investigation layout for key_findings.
+
+  Usage:
+    {% include callout.html heading="Key Findings" items=page.key_findings %}
+{% endcomment %}
+
+{%- assign callout_items = include.items -%}
+{%- assign callout_heading = include.heading | default: "Key Findings" -%}
+
+{%- if callout_items and callout_items.size > 0 -%}
+<aside class="callout" aria-label="{{ callout_heading }}">
+  <h2 class="callout__heading">{{ callout_heading }}</h2>
+  <ul class="callout__list">
+    {%- for item in callout_items -%}
+      <li>{{ item }}</li>
+    {%- endfor -%}
+  </ul>
+</aside>
+{%- endif -%}

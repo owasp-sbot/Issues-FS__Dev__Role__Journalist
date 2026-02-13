@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{% comment %}
+  Post-base layout — shared base for all content-type layouts.
+  Provides: breadcrumbs, badge, title, metadata, summary, body, sources.
+  Content-type layouts extend this by wrapping {{ content }} with type-specific markup.
+{% endcomment %}
+
+{%- assign post_type = page.type | default: "article" -%}
+
+{%- if post_type == "feature_article" or post_type == "article" -%}
+  {%- assign type_class = "article" -%}
+  {%- assign bc_name = "Articles" -%}
+  {%- assign bc_url = "/articles/" -%}
+{%- elsif post_type == "daily_brief" or post_type == "brief" -%}
+  {%- assign type_class = "brief" -%}
+  {%- assign bc_name = "Briefs" -%}
+  {%- assign bc_url = "/briefs/" -%}
+{%- elsif post_type == "interview" -%}
+  {%- assign type_class = "interview" -%}
+  {%- assign bc_name = "Interviews" -%}
+  {%- assign bc_url = "/interviews/" -%}
+{%- elsif post_type == "investigation" -%}
+  {%- assign type_class = "investigation" -%}
+  {%- assign bc_name = "Investigations" -%}
+  {%- assign bc_url = "/investigations/" -%}
+{%- elsif post_type == "correction" -%}
+  {%- assign type_class = "correction" -%}
+  {%- assign bc_name = "Corrections" -%}
+  {%- assign bc_url = "/corrections/" -%}
+{%- else -%}
+  {%- assign type_class = "article" -%}
+  {%- assign bc_name = "Articles" -%}
+  {%- assign bc_url = "/articles/" -%}
+{%- endif -%}
+
+<article class="post-base post-base--{{ type_class }}">
+  {%- include breadcrumbs.html collection_name=bc_name collection_url=bc_url -%}
+
+  <header class="post-base__header">
+    {%- include badge.html -%}
+    <h1 class="post-base__title">{{ page.title }}</h1>
+    {%- include metadata.html -%}
+    {%- if page.summary -%}
+      <p class="post-base__summary">{{ page.summary }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="post-base__body post-content">
+    {{ content }}
+  </div>
+
+  {%- include sources.html -%}
+</article>

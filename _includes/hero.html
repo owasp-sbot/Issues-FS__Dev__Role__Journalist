@@ -1,0 +1,47 @@
+{% comment %}
+  Hero component — displays the most recent item across all collections.
+
+  Usage:
+    {% include hero.html doc=hero_doc %}
+{% endcomment %}
+
+{%- assign hero_doc = include.doc -%}
+
+{%- if hero_doc -%}
+<section class="hero">
+  {%- if hero_doc.type -%}
+    <div class="hero__badge">
+      {%- include badge.html type=hero_doc.type -%}
+    </div>
+  {%- endif -%}
+
+  <h2 class="hero__title">
+    <a href="{{ hero_doc.url | relative_url }}">{{ hero_doc.title }}</a>
+  </h2>
+
+  {%- if hero_doc.summary -%}
+    <p class="hero__summary">{{ hero_doc.summary }}</p>
+  {%- endif -%}
+
+  <div class="hero__meta">
+    {%- if hero_doc.date -%}
+      <time datetime="{{ hero_doc.date | date_to_xmlschema }}">{{ hero_doc.date | date: "%B %-d, %Y" }}</time>
+    {%- endif -%}
+    {%- if hero_doc.author -%}
+      <span class="metadata__separator">&middot;</span> {{ hero_doc.author }}
+    {%- endif -%}
+    {%- assign hero_words = hero_doc.content | number_of_words -%}
+    {%- assign hero_minutes = hero_words | divided_by: 200 -%}
+    {%- if hero_minutes < 1 -%}{%- assign hero_minutes = 1 -%}{%- endif -%}
+    <span class="metadata__separator">&middot;</span> {{ hero_minutes }} min read
+  </div>
+
+  {%- if hero_doc.topics and hero_doc.topics.size > 0 -%}
+    <div class="hero__topics">
+      {%- for topic in hero_doc.topics -%}
+        <a class="topic-pill" href="{{ "/topics/#" | append: topic | slugify | relative_url }}">{{ topic }}</a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</section>
+{%- endif -%}
