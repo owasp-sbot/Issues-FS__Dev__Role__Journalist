@@ -16,6 +16,11 @@
   padding: $space-xl $space-md;
 }
 
+// Wide variant for homepage, collection pages, topics — uses full content width
+.post-base--wide {
+  max-width: $content-width;
+}
+
 .post-base__header {
   margin-bottom: $space-xl;
 }
@@ -191,6 +196,32 @@
     font-weight: 500;
     color: $color-slate;
   }
+}
+
+// ---------------------------------------------------------------------------
+// Text meta — subtitle count line
+// ---------------------------------------------------------------------------
+
+.text-meta {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+  margin-bottom: $space-md;
+}
+
+// ---------------------------------------------------------------------------
+// Topic index page
+// ---------------------------------------------------------------------------
+
+.topic-index__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-bottom: $space-xl;
+}
+
+.topic-section {
+  margin-bottom: $space-2xl;
 }
 
 // ---------------------------------------------------------------------------

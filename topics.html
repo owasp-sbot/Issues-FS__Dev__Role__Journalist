@@ -4,7 +4,7 @@ title: "Topics"
 permalink: /topics/
 ---
 
-<div class="post-base">
+<div class="post-base post-base--wide">
   <h1 class="post-base__title">Topics</h1>
   <p class="post-base__summary">All topics covered across the Issues-FS News publication.</p>
 
@@ -29,7 +29,7 @@ permalink: /topics/
   {% assign sorted_topics = all_topics | sort %}
 
   <nav class="topic-index" aria-label="Topic index">
-    <div class="metadata__topics" style="margin-bottom: 32px;">
+    <div class="topic-index__pills">
       {% for topic in sorted_topics %}
         <a class="topic-pill" href="#{{ topic | slugify }}">{{ topic }}</a>
       {% endfor %}
@@ -37,7 +37,7 @@ permalink: /topics/
   </nav>
 
   {% for topic in sorted_topics %}
-    <section id="{{ topic | slugify }}" style="margin-bottom: 48px;">
+    <section id="{{ topic | slugify }}" class="topic-section">
       <h2 class="section-heading">{{ topic }}</h2>
       {% assign topic_docs = all_docs | where_exp: "doc", "doc.topics contains topic" | sort: "date" | reverse %}
       {% for doc in topic_docs %}

@@ -40,7 +40,8 @@
   {%- if card_doc.topics and card_doc.topics.size > 0 -%}
     <div class="card__topics">
       {%- for topic in card_doc.topics -%}
-        <a class="topic-pill" href="{{ "/topics/#" | append: topic | slugify | relative_url }}">{{ topic }}</a>
+        {%- assign topic_slug = topic | slugify -%}
+        <a class="topic-pill" href="{{ "/topics/#" | append: topic_slug | relative_url }}">{{ topic }}</a>
       {%- endfor -%}
     </div>
   {%- endif -%}

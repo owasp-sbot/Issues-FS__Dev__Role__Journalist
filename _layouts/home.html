@@ -10,7 +10,7 @@ layout: default
 {%- assign sorted_docs = all_docs | sort: "date" | reverse -%}
 {%- assign hero_doc = sorted_docs | first -%}
 
-<div class="post-base">
+<div class="post-base post-base--wide">
   {%- include hero.html doc=hero_doc -%}
 
   <div class="home-grid">
