@@ -1,0 +1,150 @@
+// =============================================================================
+// Design Tokens — Issues-FS News
+// =============================================================================
+// All colours, spacing, and typography tokens defined as both CSS custom
+// properties (for runtime theming / dark-mode) and SCSS variables (for
+// Minima override compatibility).
+//
+// This file MUST be imported BEFORE Minima so that SCSS variables with
+// !default in Minima pick up our values.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// 1. Colour Palette — SCSS Variables
+// ---------------------------------------------------------------------------
+
+// Core palette
+$color-ink:           #1A1A2E;
+$color-slate:         #4A4A68;
+$color-signal-blue:   #2563EB;
+$color-deep-signal:   #1D4ED8;
+$color-paper:         #FAFAF8;
+$color-warm-grey:     #F3F2EE;
+$color-ash:           #D4D2CC;
+$color-verified:      #16A34A;
+$color-amber:         #D97706;
+$color-alert-red:     #DC2626;
+$color-fog:           #9CA3AF;
+
+// Content-type accent colours
+$color-article-accent:       $color-signal-blue;
+$color-brief-accent:         $color-amber;
+$color-interview-accent:     $color-verified;
+$color-investigation-accent: $color-alert-red;
+$color-correction-accent:    $color-fog;
+
+// Badge backgrounds
+$color-article-badge-bg:       #EFF6FF;
+$color-brief-badge-bg:         #FFFBEB;
+$color-interview-badge-bg:     #F0FDF4;
+$color-investigation-badge-bg: #FEF2F2;
+$color-correction-badge-bg:    #F3F4F6;
+
+// Badge text
+$color-article-badge-text:       #1D4ED8;
+$color-brief-badge-text:         #B45309;
+$color-interview-badge-text:     #15803D;
+$color-investigation-badge-text: #B91C1C;
+$color-correction-badge-text:    #6B7280;
+
+// Blockquote tint
+$color-blockquote-bg: #F8F9FF;
+
+// ---------------------------------------------------------------------------
+// 2. Typography — System Font Stacks (per Dinis's decision, no IBM Plex)
+// ---------------------------------------------------------------------------
+
+$font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$font-mono:  "Menlo", "Consolas", "Liberation Mono", monospace;
+
+// ---------------------------------------------------------------------------
+// 3. Spacing Scale — 8px base unit
+// ---------------------------------------------------------------------------
+
+$space-xs:  4px;
+$space-sm:  8px;
+$space-md:  16px;
+$space-lg:  24px;
+$space-xl:  32px;
+$space-2xl: 48px;
+$space-3xl: 64px;
+
+// ---------------------------------------------------------------------------
+// 4. Breakpoints
+// ---------------------------------------------------------------------------
+
+$breakpoint-mobile:  640px;
+$breakpoint-desktop: 1024px;
+
+// ---------------------------------------------------------------------------
+// 5. Layout
+// ---------------------------------------------------------------------------
+
+$content-max-width: 680px;
+
+// ---------------------------------------------------------------------------
+// 6. Minima SCSS Variable Overrides
+// ---------------------------------------------------------------------------
+// Minima declares these with !default, so setting them here takes precedence.
+
+$base-font-family: $font-serif;
+$base-font-size:   18px;
+$base-font-weight: 400;
+$base-line-height: 1.7;
+$small-font-size:  $base-font-size * 0.8;
+$spacing-unit:     $space-lg;
+
+$text-color:       $color-ink;
+$background-color: $color-paper;
+$brand-color:      $color-signal-blue;
+$brand-color-light: lighten($color-signal-blue, 30%);
+$brand-color-dark:  $color-deep-signal;
+
+$grey-color:       $color-slate;
+$grey-color-light: $color-ash;
+$grey-color-dark:  $color-ink;
+
+$content-width:    $breakpoint-desktop;
+$on-palm:          $breakpoint-mobile;
+$on-laptop:        $breakpoint-desktop;
+
+// ---------------------------------------------------------------------------
+// 7. CSS Custom Properties (applied via :root for runtime access)
+// ---------------------------------------------------------------------------
+
+:root {
+  // Palette
+  --color-ink:           #{$color-ink};
+  --color-slate:         #{$color-slate};
+  --color-signal-blue:   #{$color-signal-blue};
+  --color-deep-signal:   #{$color-deep-signal};
+  --color-paper:         #{$color-paper};
+  --color-warm-grey:     #{$color-warm-grey};
+  --color-ash:           #{$color-ash};
+  --color-verified:      #{$color-verified};
+  --color-amber:         #{$color-amber};
+  --color-alert-red:     #{$color-alert-red};
+  --color-fog:           #{$color-fog};
+
+  // Content-type accents
+  --color-article-accent:       #{$color-article-accent};
+  --color-brief-accent:         #{$color-brief-accent};
+  --color-interview-accent:     #{$color-interview-accent};
+  --color-investigation-accent: #{$color-investigation-accent};
+  --color-correction-accent:    #{$color-correction-accent};
+
+  // Typography
+  --font-sans:  #{$font-sans};
+  --font-serif: #{$font-serif};
+  --font-mono:  #{$font-mono};
+
+  // Spacing
+  --space-xs:  #{$space-xs};
+  --space-sm:  #{$space-sm};
+  --space-md:  #{$space-md};
+  --space-lg:  #{$space-lg};
+  --space-xl:  #{$space-xl};
+  --space-2xl: #{$space-2xl};
+  --space-3xl: #{$space-3xl};
+}

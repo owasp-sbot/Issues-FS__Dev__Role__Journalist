@@ -1,0 +1,58 @@
+// =============================================================================
+// Content-Type Badges — Issues-FS News
+// =============================================================================
+// Coloured badge/tag for each content type. Used on listing cards and at the
+// top of individual article pages. Five variants: article, brief, interview,
+// investigation, correction.
+// =============================================================================
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: $font-sans;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  line-height: 1.3;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+// ---------------------------------------------------------------------------
+// Badge variants
+// ---------------------------------------------------------------------------
+
+.badge--article {
+  background: $color-article-badge-bg;
+  color: $color-article-badge-text;
+}
+
+.badge--brief {
+  background: $color-brief-badge-bg;
+  color: $color-brief-badge-text;
+}
+
+.badge--interview {
+  background: $color-interview-badge-bg;
+  color: $color-interview-badge-text;
+}
+
+.badge--investigation {
+  background: $color-investigation-badge-bg;
+  color: $color-investigation-badge-text;
+}
+
+.badge--correction {
+  background: $color-correction-badge-bg;
+  color: $color-correction-badge-text;
+}
+
+// ---------------------------------------------------------------------------
+// Badge spacing when used in listing context
+// ---------------------------------------------------------------------------
+
+.listing-item .badge {
+  margin-bottom: $space-sm;
+}
