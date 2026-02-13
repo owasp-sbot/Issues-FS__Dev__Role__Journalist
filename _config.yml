@@ -8,6 +8,19 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Site navigation (used by _includes/header.html and _includes/footer.html)
+navigation:
+  - title: Articles
+    url: /articles/
+  - title: Briefs
+    url: /briefs/
+  - title: Interviews
+    url: /interviews/
+  - title: Investigations
+    url: /investigations/
+  - title: About
+    url: /about/
+
 collections_dir: publications
 
 collections:

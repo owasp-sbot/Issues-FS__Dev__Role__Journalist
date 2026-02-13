@@ -1,0 +1,182 @@
+// =============================================================================
+// Masthead / Header — Issues-FS News
+// =============================================================================
+// Dark header (Ink background, Paper text) with Signal Blue accent line.
+// Overrides Minima's default .site-header styles.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Skip-to-content link (accessibility)
+// ---------------------------------------------------------------------------
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $space-md;
+  z-index: 1000;
+  padding: $space-sm $space-md;
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-paper;
+  background: $color-signal-blue;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+    outline: 2px solid $color-paper;
+    outline-offset: 2px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Site header (dark masthead)
+// ---------------------------------------------------------------------------
+
+.site-header {
+  background-color: $color-ink;
+  border-top: none;
+  border-bottom: 2px solid $color-signal-blue;
+  padding: $space-lg $space-xl;
+  min-height: auto;
+}
+
+// ---------------------------------------------------------------------------
+// Masthead content wrapper
+// ---------------------------------------------------------------------------
+
+.masthead {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+.masthead__title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+// ---------------------------------------------------------------------------
+// Site title
+// ---------------------------------------------------------------------------
+
+.site-title,
+.site-title:visited {
+  font-family: $font-sans;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $color-paper;
+  text-decoration: none;
+  line-height: 1.1;
+
+  &:hover {
+    color: $color-paper;
+    text-decoration: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Tagline
+// ---------------------------------------------------------------------------
+
+.masthead__tagline {
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-fog;
+  margin-top: $space-xs;
+  margin-bottom: $space-md;
+}
+
+// ---------------------------------------------------------------------------
+// Navigation
+// ---------------------------------------------------------------------------
+
+.masthead__nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-lg;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.masthead__nav-link {
+  font-family: $font-sans;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: $color-ash;
+  text-decoration: none;
+  padding: $space-xs 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  // Ensure minimum 48px touch target height
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    color: $color-paper;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-signal-blue;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  &.active {
+    color: $color-paper;
+    border-bottom-color: $color-signal-blue;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// RSS badge in navigation
+// ---------------------------------------------------------------------------
+
+.masthead__rss {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-family: $font-sans;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-amber;
+  border: 1px solid $color-amber;
+  border-radius: 3px;
+  text-decoration: none;
+  min-height: 48px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color-amber;
+    color: $color-ink;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-signal-blue;
+    outline-offset: 2px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hide Minima's default hamburger trigger and nav
+// ---------------------------------------------------------------------------
+
+.site-nav {
+  display: none;
+}

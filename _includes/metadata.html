@@ -1,0 +1,49 @@
+{% comment %}
+  Metadata component — renders date, author, reading time, and topic pills.
+
+  Usage on individual post pages:
+    {% include metadata.html %}
+
+  Usage in listings (pass doc-level data):
+    {% include metadata.html date=doc.date author=doc.author content=doc.content topics=doc.topics %}
+
+  Reading time is calculated automatically: word count / 200, minimum 1 min.
+  Missing fields are gracefully omitted — no dangling separators.
+{% endcomment %}
+
+{%- assign meta_date    = include.date    | default: page.date -%}
+{%- assign meta_author  = include.author  | default: page.author -%}
+{%- assign meta_topics  = include.topics  | default: page.topics -%}
+{%- assign meta_content = include.content | default: content -%}
+
+{%- if meta_content -%}
+  {%- assign word_count  = meta_content | number_of_words -%}
+  {%- assign read_minutes = word_count | divided_by: 200 -%}
+  {%- if read_minutes < 1 -%}
+    {%- assign read_minutes = 1 -%}
+  {%- endif -%}
+{%- endif -%}
+
+<div class="metadata">
+  {%- if meta_date -%}
+    <time class="metadata__date" datetime="{{ meta_date | date_to_xmlschema }}">{{ meta_date | date: "%B %-d, %Y" }}</time>
+  {%- endif -%}
+
+  {%- if meta_author -%}
+    {%- if meta_date -%}<span class="metadata__separator">&middot;</span>{%- endif -%}
+    <span class="metadata__author">{{ meta_author }}</span>
+  {%- endif -%}
+
+  {%- if meta_content -%}
+    {%- if meta_date or meta_author -%}<span class="metadata__separator">&middot;</span>{%- endif -%}
+    <span class="metadata__reading-time">{{ read_minutes }} min read</span>
+  {%- endif -%}
+
+  {%- if meta_topics and meta_topics.size > 0 -%}
+    <div class="metadata__topics">
+      {%- for topic in meta_topics -%}
+        <span class="topic-pill">{{ topic }}</span>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>

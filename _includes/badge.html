@@ -1,0 +1,36 @@
+{% comment %}
+  Badge component — renders a content-type badge with colour coding.
+
+  Usage:
+    {% include badge.html type=doc.type %}
+    {% include badge.html %}  (uses page.type)
+
+  Supported types: feature_article, article, daily_brief, brief,
+                   interview, investigation, correction
+{% endcomment %}
+
+{%- assign badge_type = include.type | default: page.type -%}
+
+{%- if badge_type == "feature_article" or badge_type == "article" -%}
+  {%- assign badge_class = "badge--article" -%}
+  {%- assign badge_label = "Article" -%}
+{%- elsif badge_type == "daily_brief" or badge_type == "brief" -%}
+  {%- assign badge_class = "badge--brief" -%}
+  {%- assign badge_label = "Brief" -%}
+{%- elsif badge_type == "interview" -%}
+  {%- assign badge_class = "badge--interview" -%}
+  {%- assign badge_label = "Interview" -%}
+{%- elsif badge_type == "investigation" -%}
+  {%- assign badge_class = "badge--investigation" -%}
+  {%- assign badge_label = "Investigation" -%}
+{%- elsif badge_type == "correction" -%}
+  {%- assign badge_class = "badge--correction" -%}
+  {%- assign badge_label = "Correction" -%}
+{%- else -%}
+  {%- assign badge_class = "badge--article" -%}
+  {%- assign badge_label = badge_type | replace: "_", " " | capitalize -%}
+{%- endif -%}
+
+{%- if badge_type -%}
+<span class="badge {{ badge_class }}">{{ badge_label }}</span>
+{%- endif -%}
