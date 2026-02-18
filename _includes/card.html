@@ -1,0 +1,48 @@
+{% comment %}
+  Card component — reusable listing card with badge, title, meta, summary, topics.
+
+  Usage:
+    {% include card.html doc=doc compact=false %}
+    {% include card.html doc=doc compact=true %}
+{% endcomment %}
+
+{%- assign card_doc = include.doc -%}
+{%- assign card_compact = include.compact | default: false -%}
+
+<article class="card{% if card_compact %} card--compact{% endif %}">
+  {%- if card_doc.type -%}
+    <div class="card__badge">
+      {%- include badge.html type=card_doc.type -%}
+    </div>
+  {%- endif -%}
+
+  <h3 class="card__title">
+    <a href="{{ card_doc.url | relative_url }}">{{ card_doc.title }}</a>
+  </h3>
+
+  <div class="card__meta">
+    {%- if card_doc.date -%}
+      <time datetime="{{ card_doc.date | date_to_xmlschema }}">{{ card_doc.date | date: "%B %-d, %Y" }}</time>
+    {%- endif -%}
+    {%- if card_doc.author -%}
+      <span class="metadata__separator">&middot;</span> {{ card_doc.author }}
+    {%- endif -%}
+    {%- assign card_words = card_doc.content | number_of_words -%}
+    {%- assign card_minutes = card_words | divided_by: 200 -%}
+    {%- if card_minutes < 1 -%}{%- assign card_minutes = 1 -%}{%- endif -%}
+    <span class="metadata__separator">&middot;</span> {{ card_minutes }} min read
+  </div>
+
+  {%- if card_doc.summary -%}
+    <p class="card__summary">{{ card_doc.summary }}</p>
+  {%- endif -%}
+
+  {%- if card_doc.topics and card_doc.topics.size > 0 -%}
+    <div class="card__topics">
+      {%- for topic in card_doc.topics -%}
+        {%- assign topic_slug = topic | slugify -%}
+        <a class="topic-pill" href="{{ "/topics/#" | append: topic_slug | relative_url }}">{{ topic }}</a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</article>

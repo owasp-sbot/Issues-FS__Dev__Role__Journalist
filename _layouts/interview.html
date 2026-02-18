@@ -1,0 +1,17 @@
+---
+layout: post-base
+---
+{% comment %}
+  Interview layout — Q&A formatting with alternating question/answer backgrounds.
+  Questions are detected by <strong>Q:</strong> prefix in the content.
+  The SCSS .interview-qa styles handle the visual differentiation.
+{% endcomment %}
+
+{%- if page.subject -%}
+  <div class="interview-subject" style="font-family: var(--font-sans); font-size: 14px; color: #4A4A68; margin-bottom: 24px;">
+    {%- if page.subject -%}<strong>Subject:</strong> {{ page.subject }}{%- endif -%}
+    {%- if page.interviewer -%} &middot; <strong>Interviewer:</strong> {{ page.interviewer }}{%- endif -%}
+  </div>
+{%- endif -%}
+
+{{ content }}

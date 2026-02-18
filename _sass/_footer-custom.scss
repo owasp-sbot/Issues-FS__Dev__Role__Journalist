@@ -1,0 +1,132 @@
+// =============================================================================
+// Footer — Issues-FS News
+// =============================================================================
+// Dark footer with Signal Blue top border, site info, and navigation links.
+// Overrides Minima's default .site-footer styles.
+// =============================================================================
+
+.site-footer {
+  background-color: $color-ink;
+  border-top: 4px solid $color-signal-blue;
+  padding: $space-2xl $space-xl;
+  color: $color-fog;
+}
+
+// ---------------------------------------------------------------------------
+// Footer wrapper
+// ---------------------------------------------------------------------------
+
+.footer-content {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+// ---------------------------------------------------------------------------
+// Footer title and tagline
+// ---------------------------------------------------------------------------
+
+.footer__title {
+  font-family: $font-sans;
+  font-size: 18px;
+  font-weight: 700;
+  color: $color-paper;
+  margin-bottom: $space-xs;
+}
+
+.footer__tagline {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+  margin-bottom: $space-lg;
+}
+
+// ---------------------------------------------------------------------------
+// Footer navigation
+// ---------------------------------------------------------------------------
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: $space-md;
+  font-family: $font-sans;
+  font-size: 14px;
+}
+
+.footer__nav-link {
+  color: $color-ash;
+  text-decoration: none;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    color: $color-paper;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-signal-blue;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.footer__nav-separator {
+  color: $color-slate;
+  margin: 0 $space-sm;
+  display: inline-flex;
+  align-items: center;
+}
+
+// ---------------------------------------------------------------------------
+// Footer RSS badge
+// ---------------------------------------------------------------------------
+
+.footer__rss {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-family: $font-sans;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $color-amber;
+  border: 1px solid $color-amber;
+  border-radius: 3px;
+  text-decoration: none;
+  min-height: 48px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color-amber;
+    color: $color-ink;
+    text-decoration: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Footer credit line
+// ---------------------------------------------------------------------------
+
+.footer__credit {
+  font-family: $font-sans;
+  font-size: 13px;
+  color: $color-slate;
+  margin-top: $space-lg;
+  padding-top: $space-lg;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// ---------------------------------------------------------------------------
+// Hide Minima's default footer columns
+// ---------------------------------------------------------------------------
+
+.footer-col-wrapper,
+.footer-col {
+  display: none;
+}

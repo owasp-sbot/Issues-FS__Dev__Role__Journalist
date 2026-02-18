@@ -1,0 +1,194 @@
+// =============================================================================
+// Responsive Design — Issues-FS News
+// =============================================================================
+// Breakpoints: Mobile (< 640px), Tablet (640px - 1023px), Desktop (>= 1024px).
+// Mobile typography adjustments, responsive tables and code blocks.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Mobile (< 640px)
+// ---------------------------------------------------------------------------
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+
+  // Typography adjustments
+  h1, .post-title {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  body {
+    font-size: 17px;
+  }
+
+  // Content column — full width with gutters
+  .post-content,
+  .page-content .wrapper,
+  .post-header {
+    max-width: 100%;
+    padding-left: $space-md;
+    padding-right: $space-md;
+  }
+
+  // Masthead adjustments
+  .site-header {
+    padding: $space-md;
+  }
+
+  .site-title,
+  .site-title:visited {
+    font-size: 22px;
+  }
+
+  .masthead__tagline {
+    font-size: 13px;
+  }
+
+  .masthead__nav {
+    gap: $space-md;
+  }
+
+  .masthead__nav-link {
+    font-size: 14px;
+  }
+
+  // Footer adjustments
+  .site-footer {
+    padding: $space-xl $space-md;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer__nav-separator {
+    display: none;
+  }
+
+  .footer__nav-link {
+    padding: $space-xs 0;
+  }
+
+  // Responsive code blocks — bleed to screen edge
+  pre {
+    font-size: 13px;
+    padding: $space-md;
+    border-radius: 0;
+    margin-left: calc(-1 * var(--space-md));
+    margin-right: calc(-1 * var(--space-md));
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  // Responsive tables
+  .table-wrapper {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::after {
+      content: "Scroll \2192";
+      display: block;
+      font-family: $font-sans;
+      font-size: 12px;
+      color: $color-fog;
+      text-align: right;
+      padding: $space-xs 0;
+    }
+  }
+
+  table {
+    min-width: 500px;
+  }
+
+  // Listing items
+  .listing-item__title {
+    font-size: 19px;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Tablet (640px - 1023px)
+// ---------------------------------------------------------------------------
+
+@media (min-width: $breakpoint-mobile) and (max-width: #{$breakpoint-desktop - 1}) {
+  .post-content,
+  .page-content .wrapper,
+  .post-header {
+    max-width: $content-max-width;
+    padding-left: $space-lg;
+    padding-right: $space-lg;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Desktop (>= 1024px)
+// ---------------------------------------------------------------------------
+
+@media (min-width: $breakpoint-desktop) {
+  .post-content,
+  .page-content .wrapper,
+  .post-header {
+    max-width: $content-max-width;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Accessibility — focus indicators
+// ---------------------------------------------------------------------------
+
+*:focus-visible {
+  outline: 2px solid $color-signal-blue;
+  outline-offset: 2px;
+}
+
+// Ensure focus is visible on all interactive elements
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $color-signal-blue;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+// ---------------------------------------------------------------------------
+// Safe-area padding for notched devices (mobile only)
+// ---------------------------------------------------------------------------
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  @supports (padding: max(0px)) {
+    .site-header,
+    .site-footer {
+      padding-left: max(var(--space-md), env(safe-area-inset-left));
+      padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
+
+    .post-content,
+    .page-content .wrapper {
+      padding-left: max(var(--space-md), env(safe-area-inset-left));
+      padding-right: max(var(--space-md), env(safe-area-inset-right));
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Table wrapper accessibility
+// ---------------------------------------------------------------------------
+
+.table-wrapper[role="region"] {
+  // Ensure scrollable tables are accessible
+  &:focus {
+    outline: 2px solid $color-signal-blue;
+    outline-offset: 2px;
+  }
+}

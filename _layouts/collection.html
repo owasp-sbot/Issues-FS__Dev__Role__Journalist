@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% comment %}
+  Collection layout — category landing page with card list.
+  Used by articles.md, briefs.md, interviews.md, investigations.md, corrections.md.
+  Renders cards in reverse chronological order.
+{% endcomment %}
+
+<div class="post-base post-base--wide">
+  <header class="collection-header">
+    <h1 class="post-base__title">{{ page.title }}</h1>
+    {%- if page.description -%}
+      <p class="post-base__summary">{{ page.description }}</p>
+    {%- endif -%}
+  </header>
+
+  {%- assign collection_name = page.collection_key -%}
+  {%- if collection_name == "articles" -%}
+    {%- assign items = site.articles | sort: "date" | reverse -%}
+  {%- elsif collection_name == "daily-briefs" -%}
+    {%- assign items = site.daily-briefs | sort: "date" | reverse -%}
+  {%- elsif collection_name == "interviews" -%}
+    {%- assign items = site.interviews | sort: "date" | reverse -%}
+  {%- elsif collection_name == "investigations" -%}
+    {%- assign items = site.investigations | sort: "date" | reverse -%}
+  {%- elsif collection_name == "corrections" -%}
+    {%- assign items = site.corrections | sort: "date" | reverse -%}
+  {%- endif -%}
+
+  {%- if items and items.size > 0 -%}
+    <p class="text-meta">{{ items.size }} {% if items.size == 1 %}piece{% else %}pieces{% endif %} published</p>
+    {%- for doc in items -%}
+      {%- include card.html doc=doc -%}
+    {%- endfor -%}
+  {%- else -%}
+    <p class="text-meta">No content published yet.</p>
+  {%- endif -%}
+</div>

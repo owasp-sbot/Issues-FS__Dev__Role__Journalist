@@ -9,10 +9,6 @@ topics   : [vision, architecture, security, agentic-development, code-quality, g
 sources  : [Librarian catalogue v0.2.1, Dinis Cruz briefs 02/10-02/11, Issues-FS__Dev__Role__Librarian docs]
 ---
 
-# 31 Briefs in Two Days: Dinis Cruz's Vision for Issues-FS
-
-**By the Journalist Agent** | 11 February 2026
-
 **Source:** [Librarian Catalogue v0.2.1](https://github.com/owasp-sbot/Issues-FS__Dev__Role__Librarian/blob/dev/docs/v0.2.1__catalogue__dinis-briefs-feb-10.md) -- compiled by the Librarian role from the original briefs in `humans/Issues-FS__Dev__Human__Dinis_Cruz/briefs/02/10/`
 
 ---

@@ -1,0 +1,329 @@
+// =============================================================================
+// Article Reading Experience — Issues-FS News
+// =============================================================================
+// Content column, code blocks, blockquotes, tables, metadata display,
+// source citations, and topic pills.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Content column — centred, max 680px
+// ---------------------------------------------------------------------------
+
+.post-content,
+.page-content .wrapper {
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ---------------------------------------------------------------------------
+// Post header / title area
+// ---------------------------------------------------------------------------
+
+.post-header {
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: $space-lg;
+}
+
+.post-title {
+  font-family: $font-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $color-ink;
+}
+
+// Minima's default post-meta
+.post-meta {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+}
+
+// ---------------------------------------------------------------------------
+// Metadata display
+// ---------------------------------------------------------------------------
+
+.metadata {
+  font-family: $font-sans;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $color-fog;
+  margin-bottom: $space-lg;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.metadata__date {
+  color: $color-fog;
+  font-weight: 400;
+}
+
+.metadata__author {
+  color: $color-slate;
+  font-weight: 500;
+}
+
+.metadata__reading-time {
+  color: $color-fog;
+  font-weight: 400;
+}
+
+.metadata__separator {
+  color: $color-ash;
+  margin: 0 $space-sm;
+}
+
+.metadata__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-top: $space-sm;
+  width: 100%;
+}
+
+// ---------------------------------------------------------------------------
+// Topic pills
+// ---------------------------------------------------------------------------
+
+.topic-pill {
+  display: inline-block;
+  padding: $space-xs 12px;
+  font-family: $font-sans;
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-slate;
+  background: $color-warm-grey;
+  border-radius: 12px;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background: darken($color-warm-grey, 5%);
+    color: $color-ink;
+    text-decoration: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Code blocks
+// ---------------------------------------------------------------------------
+
+pre, code {
+  font-family: $font-mono;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+// Inline code
+code {
+  background: $color-warm-grey;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: $color-ink;
+}
+
+// Block code
+pre {
+  background: $color-warm-grey;
+  border: 1px solid $color-ash;
+  border-radius: 4px;
+  padding: 20px $space-lg;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: $space-lg 0;
+
+  code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Blockquotes
+// ---------------------------------------------------------------------------
+
+blockquote {
+  border-left: 4px solid $color-signal-blue;
+  background: $color-blockquote-bg;
+  padding: $space-md $space-lg;
+  margin: $space-lg 0;
+  font-style: italic;
+  color: $color-slate;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Nested blockquotes
+  blockquote {
+    margin-left: $space-sm;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Data tables
+// ---------------------------------------------------------------------------
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: $space-lg 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $space-lg 0;
+  font-family: $font-sans;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+th {
+  background: $color-warm-grey;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px $space-md;
+  border-bottom: 2px solid $color-ash;
+  color: $color-ink;
+}
+
+td {
+  padding: 10px $space-md;
+  border-bottom: 1px solid $color-ash;
+  color: $color-slate;
+}
+
+tr:hover {
+  background: $color-paper;
+}
+
+// ---------------------------------------------------------------------------
+// Source citations
+// ---------------------------------------------------------------------------
+
+.sources {
+  margin-top: $space-2xl;
+  padding-top: $space-lg;
+  border-top: 2px solid $color-ash;
+}
+
+.sources__heading {
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-fog;
+  margin-bottom: $space-md;
+}
+
+.sources__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sources__item {
+  font-family: $font-sans;
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-slate;
+  padding: $space-sm 0;
+  border-bottom: 1px solid $color-warm-grey;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    color: $color-signal-blue;
+    word-break: break-all;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Listing items
+// ---------------------------------------------------------------------------
+
+.listing-item {
+  margin-bottom: $space-xl;
+  padding-bottom: $space-xl;
+  border-bottom: 1px solid $color-ash;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.listing-item__title {
+  font-family: $font-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: $space-sm 0;
+
+  a {
+    color: $color-ink;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-signal-blue;
+    }
+  }
+}
+
+.listing-item__meta {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+  margin-bottom: $space-sm;
+}
+
+.listing-item__summary {
+  font-family: $font-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: $color-slate;
+  margin-bottom: $space-sm;
+}
+
+.listing-item__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-top: $space-sm;
+}
+
+// ---------------------------------------------------------------------------
+// Section headings for listing pages
+// ---------------------------------------------------------------------------
+
+.section-heading {
+  font-family: $font-sans;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-fog;
+  margin-bottom: $space-md;
+  padding-bottom: $space-sm;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: $color-ash;
+    margin-top: $space-sm;
+  }
+}

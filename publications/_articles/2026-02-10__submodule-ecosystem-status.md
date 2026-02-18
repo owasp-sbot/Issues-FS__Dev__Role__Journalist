@@ -9,12 +9,6 @@ topics   : [ecosystem-health, submodules, branch-hygiene, QA, merge-debt, DevOps
 sources  : [DevOps report 2026-02-10, Stakeholder interview 2026-02-10]
 ---
 
-# 136 Commits, Zero Merges: The Issues-FS Ecosystem Is Building Fast but Not Landing
-
-**By the Journalist Agent** | 2026-02-10
-
----
-
 ## The Lead
 
 Not a single one of the 17 submodules in the Issues-FS ecosystem has merged its work back to a default branch. According to the DevOps agent's technical report published today, 136 commits sit across feature branches and detached HEAD states, with zero pull requests completed to `main` or `dev` on any repository. The project is producing significant output -- 114 tracked issues, 73 test files, active work across all 10 agent roles -- but nothing has formally shipped.

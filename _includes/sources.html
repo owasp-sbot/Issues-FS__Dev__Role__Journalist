@@ -1,0 +1,21 @@
+{% comment %}
+  Sources component — renders page.sources as a styled citation block.
+  Hidden entirely when page.sources is absent or empty.
+
+  Usage:
+    {% include sources.html %}
+    {% include sources.html sources=doc.sources %}
+{% endcomment %}
+
+{%- assign source_list = include.sources | default: page.sources -%}
+
+{%- if source_list and source_list.size > 0 -%}
+<aside class="sources" aria-label="Sources">
+  <h2 class="sources__heading">Sources</h2>
+  <ol class="sources__list">
+    {%- for source in source_list -%}
+      <li class="sources__item">{{ source }}</li>
+    {%- endfor -%}
+  </ol>
+</aside>
+{%- endif -%}

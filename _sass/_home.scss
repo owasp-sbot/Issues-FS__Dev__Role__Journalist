@@ -1,0 +1,157 @@
+// =============================================================================
+// Homepage Layout — Issues-FS News
+// =============================================================================
+// Hero section, two-column grid (articles/briefs), category grid.
+// =============================================================================
+
+// ---------------------------------------------------------------------------
+// Hero section — most recent item across all collections
+// ---------------------------------------------------------------------------
+
+.hero {
+  margin-bottom: $space-2xl;
+  padding-bottom: $space-xl;
+  border-bottom: 2px solid $color-ash;
+}
+
+.hero__badge {
+  margin-bottom: $space-sm;
+}
+
+.hero__title {
+  font-family: $font-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: $space-md;
+
+  a {
+    color: $color-ink;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-signal-blue;
+    }
+  }
+}
+
+.hero__summary {
+  font-family: $font-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  color: $color-slate;
+  margin-bottom: $space-md;
+}
+
+.hero__meta {
+  font-family: $font-sans;
+  font-size: 14px;
+  color: $color-fog;
+}
+
+.hero__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-top: $space-sm;
+}
+
+// ---------------------------------------------------------------------------
+// Two-column grid — articles (left) + briefs (right)
+// ---------------------------------------------------------------------------
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+  margin-bottom: $space-2xl;
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .home-grid {
+    grid-template-columns: 3fr 2fr;
+    gap: $space-xl;
+  }
+}
+
+.home-grid__section {
+  min-width: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Category grid
+// ---------------------------------------------------------------------------
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+}
+
+@media (min-width: $breakpoint-mobile) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.category-card {
+  display: block;
+  padding: $space-lg;
+  background: $color-warm-grey;
+  border-radius: 4px;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: darken($color-warm-grey, 3%);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-signal-blue;
+    outline-offset: 2px;
+  }
+}
+
+.category-card--article       { border-left-color: $color-article-accent; }
+.category-card--brief         { border-left-color: $color-brief-accent; }
+.category-card--interview     { border-left-color: $color-interview-accent; }
+.category-card--investigation { border-left-color: $color-investigation-accent; }
+.category-card--correction    { border-left-color: $color-correction-accent; }
+
+.category-card__title {
+  font-family: $font-sans;
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-ink;
+  margin-bottom: $space-xs;
+}
+
+.category-card__count {
+  font-family: $font-sans;
+  font-size: 13px;
+  color: $color-fog;
+}
+
+// ---------------------------------------------------------------------------
+// Responsive hero
+// ---------------------------------------------------------------------------
+
+@media (max-width: #{$breakpoint-mobile - 1}) {
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .hero__summary {
+    font-size: 17px;
+  }
+}

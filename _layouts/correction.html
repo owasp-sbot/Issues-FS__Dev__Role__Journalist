@@ -1,0 +1,25 @@
+---
+layout: post-base
+---
+{% comment %}
+  Correction layout — minimal, links to corrected article, dual dates.
+  Extends post-base. Shows correction notice with link to original article.
+{% endcomment %}
+
+{%- if page.corrects -%}
+<div class="correction-notice">
+  <strong>Correction:</strong> This corrects a previously published piece.
+  {%- if page.corrects_url -%}
+    <a href="{{ page.corrects_url | relative_url }}">View original article</a>
+  {%- endif -%}
+</div>
+{%- endif -%}
+
+{%- if page.original_date -%}
+<div class="correction-dates">
+  Original published: <time datetime="{{ page.original_date | date_to_xmlschema }}">{{ page.original_date | date: "%B %-d, %Y" }}</time>
+  &middot; Correction issued: <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+</div>
+{%- endif -%}
+
+{{ content }}

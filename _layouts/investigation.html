@@ -1,0 +1,11 @@
+---
+layout: post-base
+---
+{% comment %}
+  Investigation layout — includes key findings callout from page.key_findings.
+  Extends post-base. The callout renders before the body content.
+{% endcomment %}
+
+{%- include callout.html heading="Key Findings" items=page.key_findings -%}
+
+{{ content }}

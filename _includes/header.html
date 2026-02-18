@@ -1,0 +1,40 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<header class="site-header" role="banner">
+  <div class="masthead wrapper">
+    <div class="masthead__title-row">
+      <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    </div>
+
+    <p class="masthead__tagline">{{ site.description | escape }}</p>
+
+    <nav class="masthead__nav" aria-label="Primary navigation">
+      {%- for link in site.navigation -%}
+        {%- assign current_path = page.url | remove_first: "/" | split: "/" | first -%}
+        {%- assign link_path = link.url | remove_first: "/" | split: "/" | first -%}
+        <a class="masthead__nav-link{% if current_path == link_path %} active{% endif %}"
+           href="{{ link.url | relative_url }}"
+           {% if current_path == link_path %}aria-current="page"{% endif %}>
+          {{ link.title }}
+        </a>
+      {%- endfor -%}
+
+      <a class="masthead__rss" href="{{ "/feed.xml" | relative_url }}" title="RSS Feed">RSS</a>
+    </nav>
+
+    <details class="mobile-menu">
+      <summary class="mobile-menu__toggle" aria-label="Menu">&#9776;</summary>
+      <nav class="mobile-menu__links" aria-label="Mobile navigation">
+        {%- for link in site.navigation -%}
+          {%- assign current_path = page.url | remove_first: "/" | split: "/" | first -%}
+          {%- assign link_path = link.url | remove_first: "/" | split: "/" | first -%}
+          <a class="mobile-menu__link{% if current_path == link_path %} active{% endif %}"
+             href="{{ link.url | relative_url }}">
+            {{ link.title }}
+          </a>
+        {%- endfor -%}
+        <a class="mobile-menu__link" href="{{ "/feed.xml" | relative_url }}">RSS</a>
+      </nav>
+    </details>
+  </div>
+</header>

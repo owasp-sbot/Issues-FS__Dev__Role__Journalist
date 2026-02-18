@@ -1,18 +1,7 @@
 ---
-layout: page
+layout: collection
 title: "Corrections"
+description: "Corrections and updates to previously published content. See also our Corrections Policy."
 permalink: /corrections/
+collection_key: corrections
 ---
-
-Corrections and updates to previously published content.
-
-{% assign sorted = site.corrections | sort: "date" | reverse %}
-{% for doc in sorted %}
-### [{{ doc.title }}]({{ doc.url | relative_url }})
-
-**{{ doc.date | date: "%B %-d, %Y" }}** | By {{ doc.author }}
-
-{{ doc.summary }}
-
----
-{% endfor %}

@@ -1,0 +1,23 @@
+<footer class="site-footer h-card" role="contentinfo">
+  <div class="footer-content wrapper">
+    <div class="footer__title">{{ site.title | escape }}</div>
+    <p class="footer__tagline">{{ site.description | escape }}</p>
+
+    <nav class="footer__nav" aria-label="Footer navigation">
+      {%- for link in site.navigation -%}
+        {%- unless forloop.first -%}
+          <span class="footer__nav-separator">&middot;</span>
+        {%- endunless -%}
+        <a class="footer__nav-link" href="{{ link.url | relative_url }}">{{ link.title }}</a>
+      {%- endfor -%}
+
+      <span class="footer__nav-separator">&middot;</span>
+      <a class="footer__rss" href="{{ "/feed.xml" | relative_url }}" title="RSS Feed">RSS</a>
+
+      <span class="footer__nav-separator">&middot;</span>
+      <a class="footer__nav-link" href="https://github.com/owasp-sbot/Issues-FS__Dev__Role__Journalist">GitHub</a>
+    </nav>
+
+    <p class="footer__credit">Powered by the Journalist Role &middot; Issues-FS Ecosystem</p>
+  </div>
+</footer>
